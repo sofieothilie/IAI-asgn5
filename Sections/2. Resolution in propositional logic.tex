@@ -1,14 +1,53 @@
 \section{Resolution in propositional logic}
 \subsection{Conjunctive Normal Form}
 \begin{large}
-% \begin{enumerate}
-%     \item p \equiv q
-% \end{enumerate}
-    
+    Convert each of the following sentences to their Conjunctive Normal Form (CNF).
+    A CNF formula is composed of a conjunction (AND) of one or more clauses, where each clause is a disjunction (OR) of literals.
+    \begin{enumerate}
+        \item $ p \iff q $
+
+              $ (p \iff q) \equiv ((p \land q) \lor (\neg p \land \neg q)) \equiv \underline{\underline{((p \lor \neg q) \land (\neg p \lor q))}}$
+
+        \item $ \neg ((p \Rightarrow q) \land r) $
+
+              $ (p \Rightarrow q ) \equiv  (p \land \neg q) $
+
+              $ (( p \Rightarrow q) \land r) \equiv  (p \land \neg q \land r) $
+
+              $ \neg ((p \Rightarrow q) \land r) \equiv $ \underline{\underline{$(\neg p \lor q \lor \neg r)$}}
+
+        \item $ ((p \lor q) \lor (r \land \neg(q \Rightarrow r))) $
+
+              $\neg(q \Rightarrow r) \equiv \neg(q \land \neg r) \equiv (\neg q \lor r)$
+
+              $ (r \land \neg(q \Rightarrow r)) \equiv (r \land (\neg q \lor r)) $
+
+              $ ((p \lor q) \lor (r \land \neg(q \Rightarrow r))) \equiv ((p \lor q) \lor (r \land (\neg q \lor r))) \equiv \underline{\underline{((p \lor q \lor r) \land (p \lor r))}} $
+
+        \item Yes, the expression above is in CNF\@.
+    \end{enumerate}
 \end{large}
 
 
 \subsection{Inference in propositional logic}
 \begin{large}
-    
+    Use resolution to conclude r from the following statements.
+    \begin{enumerate}
+        \item $ (p \Rightarrow q) \Rightarrow q $
+        \item $ p \Rightarrow r $
+        \item $ (r \Rightarrow s) \Rightarrow (\neq (s \Rightarrow q)) $
+    \end{enumerate}
+    Convert each statement into CNF\@:
+    \begin{enumerate}
+        \item $ ((p \Rightarrow q) \Rightarrow q) \equiv ((p \land \neg q) \lor q) $
+        \item $ (p \Rightarrow r) \equiv (\neg p \lor r) $
+        \item $ ((r \Rightarrow s) \Rightarrow (\neq (s \Rightarrow q))) \equiv ((s \land \neg q))$
+    \end{enumerate}
+    By performing resolution on clause 1 and 2 on q, we get:
+    $ (p \land \neg q) \lor (\neg p \lor r)  $, which is equivalent to $ p \lor r $, which we will call clause 4 from here on.
+    By performing resolution on clause 4 and 3 on q, we get:
+    $ (s \land (\neg p \lor r)) $, which is equivalent to $ (s \land p) \lor (s \land r) $, which we will call clause 5 from here on.
+    This result tells us that either $ p \lor r $ or s must be true.
+    If $ p \lor r $ is true, we have $ (\neg p \lor r) $, which means r must be true.
+    If s is true, then r may be either true or false.
 \end{large}
