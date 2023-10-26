@@ -47,30 +47,83 @@
             1 & 1 & 1 & 1                   & 1                   & 1                   & 1                                                     & 1     \\
             \hline
           \end{tabular}
+          \\ \\
+          This complete model is not a tautology, as not all instances of the model is true.
 
-    \item $ (p \lor(\neg q \Rightarrow r)) \Rightarrow (q \lor (\neg p \Rightarrow r)) $ \\
+    \item $ (p \lor(\neg q \Rightarrow r)) \Rightarrow (q \lor (\neg p \Rightarrow r)) $
 
           \begin{tabular}{c|c|c|c|c|c|c||c}
-            p                                 & q     & r & $ \neg q \Rightarrow r $ & $ p \lor (\neg q \Rightarrow r) $ & $ \neg p \Rightarrow r $ &
-            $ q \lor (\neg p \Rightarrow r) $ & Total                                                                                                       \\
+            p & q & r & $ \neg q \Rightarrow r $ & $ p \lor (\neg q \Rightarrow r) $ & $ \neg p \Rightarrow r $ & $ q \lor (\neg p \Rightarrow r) $ & Total \\
             \hline\hline
-            0                                 & 0     & 0 & 1                        & 1                                 & 1                        & 1 & 1 \\
+            0 & 0 & 0 & 0                        & 0                                 & 0                        & 0                                 & 1     \\
             \hline
-            0                                 & 0     & 1 & 1                        & 1                                 & 1                        & 0 & 0 \\
+            0 & 0 & 1 & 1                        & 1                                 & 1                        & 1                                 & 1     \\
             \hline
-            0                                 & 1     & 0 & 1                        & 1                                 & 0                        & 0 & 0 \\
+            0 & 1 & 0 & 1                        & 1                                 & 0                        & 1                                 & 1     \\
             \hline
-            0                                 & 1     & 1 & 1                        & 1                                 & 1                        & 1 & 1 \\
+            0 & 1 & 1 & 1                        & 1                                 & 1                        & 1                                 & 1     \\
             \hline
-            1                                 & 0     & 0 & 1                        & 1                                 & 1                        & 1 & 1 \\
+            1 & 0 & 0 & 0                        & 1                                 & 1                        & 1                                 & 1     \\
             \hline
-            1                                 & 0     & 1 & 1                        & 1                                 & 0                        & 0 & 0 \\
+            1 & 0 & 1 & 1                        & 1                                 & 1                        & 1                                 & 1     \\
             \hline
-            1                                 & 1     & 0 & 1                        & 1                                 & 1                        & 1 & 1 \\
+            1 & 1 & 0 & 1                        & 1                                 & 1                        & 1                                 & 1     \\
             \hline
-            1                                 & 1     & 1 & 0                        & 0                                 & 1                        & 1 & 1 \\
+            1 & 1 & 1 & 1                        & 1                                 & 1                        & 1                                 & 1     \\
             \hline
           \end{tabular}
+          \\ \\
+          This complete model is a tautology, as all instances of the model is true.
+
+    \item $ \neg(p \lor( q \Rightarrow \neg r)) \Rightarrow (( p \Rightarrow  q) \land ( p \Rightarrow  r)) $
+
+          \begin{tabular}{c|c|c|c|c|c|c||c}
+            p & q & r & $ q \Rightarrow \neg r $ & $ \neg(p \lor( q \Rightarrow \neg r)) $ & $  p \Rightarrow  q $ & $  p \Rightarrow  r $ & Total \\
+            \hline\hline
+            0 & 0 & 0 & 1                        & 0                                       & 1                     & 1                     & 1     \\
+            \hline
+            0 & 0 & 1 & 0                        & 1                                       & 1                     & 1                     & 1     \\
+            \hline
+            0 & 1 & 0 & 1                        & 0                                       & 1                     & 1                     & 1     \\
+            \hline
+            0 & 1 & 1 & 1                        & 0                                       & 1                     & 1                     & 1     \\
+            \hline
+            1 & 0 & 0 & 1                        & 0                                       & 0                     & 0                     & 1     \\
+            \hline
+            1 & 0 & 1 & 1                        & 0                                       & 0                     & 1                     & 1     \\
+            \hline
+            1 & 1 & 0 & 0                        & 0                                       & 1                     & 0                     & 1     \\
+            \hline
+            1 & 1 & 1 & 1                        & 0                                       & 1                     & 1                     & 1     \\
+            \hline
+          \end{tabular}
+          \\ \\
+          This complete model is a tautology.
+
+    \item $ \neg(\neg p \lor ( q \land r)) \Rightarrow (\neg (p \lor q) \land r) $
+
+          \begin{tabular}{c|c|c|c|c|c|c||c}
+            p & q & r & $ q \land r $ & $ \neg(\neg p \lor ( q \land r)) $ & $ \neg (p \lor q) $ & $ \neg (p \lor q) \land r $ & Total \\
+            \hline\hline
+            0 & 0 & 0 & 0             & 0                                  & 1                   & 0                           & 1     \\
+            \hline
+            0 & 0 & 1 & 0             & 0                                  & 1                   & 1                           & 1     \\
+            \hline
+            0 & 1 & 0 & 0             & 0                                  & 0                   & 0                           & 1     \\
+            \hline
+            0 & 1 & 1 & 1             & 0                                  & 0                   & 0                           & 1     \\
+            \hline
+            1 & 0 & 0 & 0             & 1                                  & 0                   & 0                           & 0     \\
+            \hline
+            1 & 0 & 1 & 0             & 1                                  & 0                   & 0                           & 0     \\
+            \hline
+            1 & 1 & 0 & 0             & 1                                  & 0                   & 0                           & 0     \\
+            \hline
+            1 & 1 & 1 & 1             & 0                                  & 0                   & 0                           & 1     \\
+            \hline
+          \end{tabular}
+          \\ \\
+          This complete model is not a tautology.
   \end{enumerate}
 \end{large}
 
