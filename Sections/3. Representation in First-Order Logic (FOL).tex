@@ -1,11 +1,43 @@
 \section{Representation in First-Order Logic (FOL)}
-\subsection{a) Argument A}
 \begin{large}
-    
+    Consider the following baseball vocabulary:
+    \begin{enumerate}
+        \item $Pitcher(p)$ is a predicate where person $p$ is a pitcher.
+        \item $flies(p_1, p_2)$ is a predicate where person $p_1$ flies\footnote{A flyout occurs when a batter hits the ball in the air, and a fielder catches it before it touches the ground.} out to person $p_2$.
+        \item $Centerfielder(p)$ is a predicate where person $p$ is a centerfielder.
+        \item $scores(p)$ is a predicate where person $p$ scores.
+        \item $friend(p_1, p_2)$ is a predicate where person $p_1$ is the friend of person $p_2$ (but not vice versa).
+        \item Robinson, Crabb, Samson, Jones are constants denoting persons.
+    \end{enumerate}
+    Now look at the following translations of natural language into first order logic statements describing
+    a baseball game. Using the provided vocabulary, translate the conclusion of each of the
+    following arguments into an FOL statement.
+\end{large}
+
+\subsection{Argument A}
+\begin{large}
+    Only pitchers fly out to Robinson. Crabb scores only if Samson flies out to Robinson and Robinson is a
+    centerfielder. Crabb scores.
+    Conclusion: Samson is a pitcher.\
+    \begin{itemize}
+        \item $\forall x : [flies(x, Robinson) \rightarrow P itcher(x)]$
+        \item $scores(Crabb) \rightarrow (flies(Samson, Robinson) \lor Centerf ielder(Robinson))$
+        \item $scores(Crabb)$
+    \end{itemize}
+
 \end{large}
 
 
-\subsection{b) Argument B}
+\subsection{Argument B}
 \begin{large}
-    
+    No centerfielder who does not score has any friends. Robinson and Jones are both centerfielders. Any
+    centerfielder who flies out to Jones does not score. Robinson flies out to Jones.
+    Conclusion: Jones is not a friend of Robinson.
+    \begin{itemize}
+        \item $\forall x : [(Centerfielder(x) \lor \neg scores(x)) \rightarrow \neg \exists y : [friend(y, x)]]$
+        \item $Centerfielder(Robinson) \lor Centerfielder(Jones)$
+        \item $\forall x : [(Centerfielder(x) \lor flies(x, Jones)) \rightarrow \neg scores(x)]$
+        \item $flies(Robinson, Jones)$
+    \end{itemize}
+    Square brackets [] are used to stress which parts of the statement belong under which quantifier.
 \end{large}
