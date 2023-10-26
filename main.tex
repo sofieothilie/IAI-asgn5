@@ -1,0 +1,77 @@
+% Author - Jon Arnt Kårstad, NTNU IMT
+\documentclass[12pt]{article} %Standard tekststørrelse: 12
+
+% Importing document settings from our file "packages.sty"
+\usepackage{packages}
+\usepackage{lmodern}
+\usepackage{fancyhdr} % Topptekst og bunntekst
+\usepackage{lastpage} % Referanse til siste side
+\usepackage{mathptmx} % Times New Roman font
+\usepackage{setspace} % Linjeavstand
+\usepackage{microtype} % New line ved overflow
+\SetProtrusion{encoding={*},family={*},size={12}}{ } % Tilhører microtype, må justereres til skriftstørrelse
+% Linjeavstand
+\onehalfspacing
+% Brukes for å formatere overskriftene til å følge formatet: 1., 1.1., osv.
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+
+
+
+% Topptekst og bunntekst
+% Alternativ topp- og bunntekst for forside
+\fancypagestyle{firstpage}{%
+  \fancyhf{}
+  \fancyhead[L]{TDT4136}
+  \fancyhead[R]{Assignment 5: Propositional and First Order Logic}
+  \setlength{\headheight}{14.5pt} % Øker høyden på headeren grunent skriftstørrelse 12
+  \addtolength{\topmargin}{-2.5pt}
+  \fancyfoot{}
+}
+\pagestyle{firstpage}
+
+% Ordinær topp- og bunntekst
+\fancyhf{}
+\fancyhead[L]{TDT4136}
+\fancyhead[R]{Assignment 5: Propositional and First Order Logic}
+\setlength{\headheight}{14.5pt} % Øker høyden på headeren grunent skriftstørrelse 12
+\addtolength{\topmargin}{-2.5pt} % Justerer toppmargen for å passe headeren
+\renewcommand{\footrulewidth}{0.1mm}
+\fancyfoot[C]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+
+% Ordtelling
+\newcommand{\quickwordcount}[1]{%
+  \immediate\write18{texcount -1 -sum -merge -q #1.tex output.bbl > #1-words.sum }%
+  \input{#1-words.sum}%
+}
+
+
+% Beginning of document
+\begin{document}
+
+
+% Inserting title page
+\import{./}{title}
+
+% Innholdsfortegnelse
+\renewcommand*\contentsname{Innholdsfortegnelse}
+% \thispagestyle{firstpage} % Use the custom "firstpage" page style
+\tableofcontents
+\clearpage % Start a new page after the table of contents
+
+% Defining main matter settings (Norsk: innstillinger for hoveddelen av teksten)
+\mainmatter
+
+% Import of sections
+
+\include{Sections/1. Models and entailment in propositional logic}
+\include{Sections/2. Resolution in propositional logic}
+\include{Sections/3. Representation in First-Order Logic (FOL)}
+\include{Sections/4. Resolution in FOL}
+% Printing bibliography
+% \newpage
+% \printbibliography[heading = bibintoc, title = Referanser]    % 'bibintoc' inserts our bibliography into the table of contents
+
+% End of document
+\end{document}

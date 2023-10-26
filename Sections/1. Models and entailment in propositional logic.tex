@@ -1,0 +1,96 @@
+\section{Models and entailment in propositional logic}
+\subsection{Validity and Soundness}
+\begin{large}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Generate the vocabulary of the following argument.
+    \item Translate the argument into propositional logic statements.
+    \item Add a premise (P4) to make the conclusion of the argument valid.
+\end{enumerate}
+P1 to P3 are the premises, C is the conclusion:
+\begin{itemize}
+  \item (P1) If Peter’s argument is valid and all the premises of Peter’s argument are true, then Peter’s argument is sound.
+  \item (P2) If the premises of Peter’s argument entail the conclusion of Peter’s argument, then Peter’s
+argument is valid. 
+  \item (P3) The premises of Peter’s argument entail the conclusion of Peter’s argument.
+  \item (C) Peter’s argument is sound.
+\end{itemize}
+
+
+\end{large}
+
+
+\subsection{Modelling}
+\begin{large}
+\raggedright A sentence is satisfiable if it is true in or satisfied by some model.
+
+\begin{enumerate}[label=(\alph*)]
+    \item $ (p \Rightarrow q) \Rightarrow (p \Rightarrow r) \Rightarrow ( q \Rightarrow r ) $ \\
+    \begin{tabular}{c|c|c|c|c|c|c||c}
+        p & q & r & $ p \Rightarrow q $ & $ p \Rightarrow r $ & $ q \Rightarrow r $ &
+        $ (p \Rightarrow r) \Rightarrow ( q \Rightarrow r ) $ & Total \\
+        \hline\hline
+        0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+        0 & 0 & 1 & 1 & 1 & 1 & 0 & 0\\
+        \hline
+        0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 \\
+        \hline
+        0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+        0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+        0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+        1 & 1 & 0 & 1 & 1 & 0 & 0 & 0 \\
+        \hline
+        1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+        1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+        \hline
+        1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 \\
+        \hline
+        1 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+        \hline
+        1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+    \end{tabular}
+
+    \item $ (p \lor(\neg q \Rightarrow r)) \Rightarrow (q \lor (\neg p \Rightarrow r)) $ \\
+
+    \begin{tabular}{c|c|c|c|c|c|c||c}
+        p & q & r & $ \neg q \Rightarrow r $ & $ p \lor (\neg q \Rightarrow r) $ & $ \neg p \Rightarrow r $ &
+        $ q \lor (\neg p \Rightarrow r) $ & Total \\
+        \hline\hline
+        0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+        0 & 0 & 1 & 1 & 1 & 1 & 0 & 0\\
+        \hline
+        0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 \\
+        \hline
+        0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+        0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+        0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+        1 & 1 & 0 & 1 & 1 & 0 & 0 & 0 \\
+        \hline
+        1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+        1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+        \hline
+        1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 \\
+        \hline
+        1 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+        \hline
+        1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+    \end{tabular}
+\end{enumerate} 
+\end{large}
+
+\subsection{Modelling 2}
+\begin{large}
+    
+\end{large}
