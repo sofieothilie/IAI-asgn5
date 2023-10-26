@@ -24,7 +24,7 @@
 \begin{large}
   A sentence is satisfiable if it is true in or satisfied by some model.
 
-  \begin{enumerate}[label=(\alph*)]
+  \begin{enumerate}[label= (\alph*)]
     \item $ (p \Rightarrow q) \Rightarrow (p \Rightarrow r) \Rightarrow ( q \Rightarrow r ) $
 
           \begin{tabular}{c|c|c|c|c|c|c||c}
@@ -129,5 +129,26 @@
 
 \subsection{Modelling 2}
 \begin{large}
+  \begin{tabular}{c|c|c||c||c}
+    p & q & r & $ \phi$ & $ (r \Rightarrow q) $ \\
+    \hline\hline
+    0 & 0 & 0 & 1       & 1                     \\
+    \hline
+    0 & 0 & 1 & 0       & 0                     \\
+    \hline
+    0 & 1 & 0 & 1       & 1                     \\
+    \hline
+    0 & 1 & 1 & 1       & 1                     \\
+    \hline
+    1 & 0 & 0 & 1       & 1                     \\
+    \hline
+    1 & 0 & 1 & 0       & 0                     \\
+    \hline
+    1 & 1 & 0 & 1       & 1                     \\
+    \hline
+    1 & 1 & 1 & 1       & 1                     \\
+    \hline
+  \end{tabular}
 
+  The expression is independent of p, meaning it doesnt affect the value of $\phi$. $\phi$ is equvialent to $(r \Rightarrow q)$. If we want to include p, we can write $ (r \Rightarrow q)  \land (p \lor \neg p) $.
 \end{large}
