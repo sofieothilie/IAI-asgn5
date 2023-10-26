@@ -1,12 +1,6 @@
 \section{Models and entailment in propositional logic}
 \subsection{Validity and Soundness}
 \begin{large}
-
-  \begin{enumerate}[label=(\alph*)]
-    \item Generate the vocabulary of the following argument.
-    \item Translate the argument into propositional logic statements.
-    \item Add a premise (P4) to make the conclusion of the argument valid.
-  \end{enumerate}
   P1 to P3 are the premises, C is the conclusion:
   \begin{itemize}
     \item (P1) If Peter’s argument is valid and all the premises of Peter’s argument are true, then Peter’s argument is sound.
@@ -16,12 +10,31 @@
     \item (C) Peter’s argument is sound.
   \end{itemize}
 
-
+  \begin{enumerate}[label=(\alph*)]
+    \item Generate the vocabulary of the following argument.
+          \begin{itemize}
+            \item (P1) Peter's argument is valid.
+            \item (P2) The premises of Peter's argument entail the conclusion.
+            \item (P3) Peter's argument is sound.
+            \item (C) The conculsion is true
+          \end{itemize}
+    \item Translate the argument into propositional logic statements.
+          \begin{itemize}
+            \item (P1) P
+            \item (P2) $ P \Rightarrow C $
+            \item (P3) C
+            \item (C) C
+          \end{itemize}
+    \item Add a premise (P4) to make the conclusion of the argument valid.
+          Adding (P4) Peter's argument is valid, ensures that Peter's argument is both sound and valid, and thus the conclusion is valid.
+  \end{enumerate}
 \end{large}
 
 
 \subsection{Modelling}
 \begin{large}
+  For each of the following statements, determine if they are satisfiable by building the complete model (truth table) and mark tautologies.
+
   A sentence is satisfiable if it is true in or satisfied by some model.
 
   \begin{enumerate}[label= (\alph*)]
@@ -129,6 +142,9 @@
 
 \subsection{Modelling 2}
 \begin{large}
+  Let $\phi$ be a sentence that contains three atomic constituents and let the truth conditions of $\phi$ be defined
+  by the truth table below. Write a propositional logic statement that contains p, q, and r as constituents,
+  and that is equivalent to $\phi$.
   \begin{tabular}{c|c|c||c||c}
     p & q & r & $ \phi$ & $ (r \Rightarrow q) $ \\
     \hline\hline

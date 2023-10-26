@@ -9,4 +9,4 @@
 *.xml
 *.gz
 *.toc
-*.busy
+*.syntex(busy)
