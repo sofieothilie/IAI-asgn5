@@ -1,14 +1,14 @@
 \section{Resolution in propositional logic}
 \subsection{Conjunctive Normal Form}
 \begin{large}
-    Convert each of the following sentences to their Conjunctive Normal Form (CNF).
-    A CNF formula is composed of a conjunction (AND) of one or more clauses, where each clause is a disjunction (OR) of literals.
+    \textbf{Convert each of the following sentences to their Conjunctive Normal Form (CNF).
+    A CNF formula is composed of a conjunction (AND) of one or more clauses, where each clause is a disjunction (OR) of literals.}
     \begin{enumerate}
-        \item $ p \iff q $
+        \item $ \mathbf{p \iff q} $
 
               $ (p \iff q) \equiv ((p \land q) \lor (\neg p \land \neg q)) \equiv \underline{\underline{((p \lor \neg q) \land (\neg p \lor q))}}$
 
-        \item $ \neg ((p \Rightarrow q) \land r) $
+        \item $ \mathbf{\neg ((p \Rightarrow q) \land r) }$
 
               $ (p \Rightarrow q ) \equiv  (p \land \neg q) $
 
@@ -16,7 +16,7 @@
 
               $ \neg ((p \Rightarrow q) \land r) \equiv $ \underline{\underline{$(\neg p \lor q \lor \neg r)$}}
 
-        \item $ ((p \lor q) \lor (r \land \neg(q \Rightarrow r))) $
+        \item $\mathbf{ ((p \lor q) \lor (r \land \neg(q \Rightarrow r))) }$
 
               $\neg(q \Rightarrow r) \equiv \neg(q \land \neg r) \equiv (\neg q \lor r)$
 
@@ -32,11 +32,11 @@
 
 \subsection{Inference in propositional logic}
 \begin{large}
-    Use resolution to conclude r from the following statements.
+    \textbf{Use resolution to conclude r from the following statements.}
     \begin{enumerate}
-        \item $ (p \Rightarrow q) \Rightarrow q $
-        \item $ p \Rightarrow r $
-        \item $ (r \Rightarrow s) \Rightarrow (\neq (s \Rightarrow q)) $
+        \item $ \mathbf{(p \Rightarrow q) \Rightarrow q }$
+        \item $ \mathbf{p \Rightarrow r }$
+        \item $ \mathbf{(r \Rightarrow s) \Rightarrow (\neq (s \Rightarrow q))} $
     \end{enumerate}
     Convert each statement into CNF\@:
     \begin{enumerate}

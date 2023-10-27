@@ -1,43 +1,57 @@
 \section{Representation in First-Order Logic (FOL)}
 \begin{large}
-    Consider the following baseball vocabulary:
+    \textbf{Consider the following baseball vocabulary:}
     \begin{enumerate}
-        \item $Pitcher(p)$ is a predicate where person $p$ is a pitcher.
-        \item $flies(p_1, p_2)$ is a predicate where person $p_1$ flies\footnote{A flyout occurs when a batter hits the ball in the air, and a fielder catches it before it touches the ground.} out to person $p_2$.
-        \item $Centerfielder(p)$ is a predicate where person $p$ is a centerfielder.
-        \item $scores(p)$ is a predicate where person $p$ scores.
-        \item $friend(p_1, p_2)$ is a predicate where person $p_1$ is the friend of person $p_2$ (but not vice versa).
-        \item Robinson, Crabb, Samson, Jones are constants denoting persons.
+        \item $Pitcher(p)$ \textbf{is a predicate where person} $p$ \textbf{is a pitcher}.
+        \item $flies(p_1, p_2)$ \textbf{is a predicate where person} $p_1$ \textbf{flies}\footnote{A flyout occurs when a batter hits the ball in the air, and a fielder catches it before it touches the ground.} \textbf{ out to person }$p_2$.
+        \item $Centerfielder(p)$ \textbf{is a predicate where person} $p$ \textbf{is a centerfielder.}
+        \item $scores(p)$ \textbf{is a predicate where person} $p$\textbf{ scores.}
+        \item $friend(p_1, p_2)$ \textbf{is a predicate where person }$p_1$\textbf{ is the friend of person} $p_2$ \textbf{(but not vice versa).}
+        \item \textbf{Robinson, Crabb, Samson, Jones are constants denoting persons.}
     \end{enumerate}
-    Now look at the following translations of natural language into first order logic statements describing
-    a baseball game. Using the provided vocabulary, translate the conclusion of each of the
-    following arguments into an FOL statement.
+    \textbf{Now look at the following translations of natural language into first order logic statements describing
+        a baseball game. Using the provided vocabulary, translate the conclusion of each of the
+        following arguments into an FOL statement.}
 \end{large}
 
 \subsection{Argument A}
 \begin{large}
-    Only pitchers fly out to Robinson. Crabb scores only if Samson flies out to Robinson and Robinson is a
-    centerfielder. Crabb scores.
-    Conclusion: Samson is a pitcher.\
+    \textbf{Only pitchers fly out to Robinson. Crabb scores only if Samson flies out to Robinson and Robinson is a
+        centerfielder. Crabb scores.
+        Conclusion: Samson is a pitcher.}\
     \begin{itemize}
-        \item $\forall x : [flies(x, Robinson) \rightarrow P itcher(x)]$
-        \item $scores(Crabb) \rightarrow (flies(Samson, Robinson) \lor Centerf ielder(Robinson))$
-        \item $scores(Crabb)$
+        \item $\mathbf{\forall x : [flies(x, Robinson) \rightarrow Pitcher(x)]}$
+        \item $\mathbf{scores(Crabb) \rightarrow (flies(Samson, Robinson) \lor Centerfielder(Robinson))}$
+        \item $\mathbf{scores(Crabb)}$
     \end{itemize}
 
+    Translated into FOL we get:
+
+    $\forall x : [(flies(x, Robinson) \rightarrow Pitcher(x)) \\
+        \land (scores(Crabb) \rightarrow (flies(Samson, Robinson) \lor Centerfielder(Robinson)))] \\
+        \land scores(Crabb) \\
+        \rightarrow Pitcher(Samson)$
 \end{large}
 
 
 \subsection{Argument B}
 \begin{large}
-    No centerfielder who does not score has any friends. Robinson and Jones are both centerfielders. Any
-    centerfielder who flies out to Jones does not score. Robinson flies out to Jones.
-    Conclusion: Jones is not a friend of Robinson.
+    \textbf{No centerfielder who does not score has any friends. Robinson and Jones are both centerfielders. Any
+        centerfielder who flies out to Jones does not score. Robinson flies out to Jones.
+        Conclusion: Jones is not a friend of Robinson.}
     \begin{itemize}
-        \item $\forall x : [(Centerfielder(x) \lor \neg scores(x)) \rightarrow \neg \exists y : [friend(y, x)]]$
-        \item $Centerfielder(Robinson) \lor Centerfielder(Jones)$
-        \item $\forall x : [(Centerfielder(x) \lor flies(x, Jones)) \rightarrow \neg scores(x)]$
-        \item $flies(Robinson, Jones)$
+        \item $\mathbf{\forall x : [(Centerfielder(x) \lor \neg scores(x)) \rightarrow \neg \exists y : [friend(y, x)]]}$
+        \item $\mathbf{Centerfielder(Robinson) \lor Centerfielder(Jones)}$
+        \item $\mathbf{\forall x : [(Centerfielder(x) \lor flies(x, Jones)) \rightarrow \neg scores(x)]}$
+        \item $\mathbf{flies(Robinson, Jones)}$
     \end{itemize}
-    Square brackets [] are used to stress which parts of the statement belong under which quantifier.
+    \textbf{Square brackets [] are used to stress which parts of the statement belong under which quantifier.}
+
+    Translated into FOL we get:
+
+    $\textcolor{PineGreen}{\forall x : ((Centerfielder(x) \lor \neg scores(x)) \rightarrow \neg \exists y : [friend(y, x)])} \\
+        \textcolor{PineGreen}{\land (Centerfielder(Robinson) \lor Centerfielder(Jones))} \\
+        \textcolor{PineGreen}{\land [\forall x : [(Centerfielder(x) \lor flies(x, Jones)) \rightarrow \neg scores(x)]]}\\
+        \land flies(Robinson, Jones) \\
+        \textcolor{purple}{\rightarrow \neg friend(Robinson, Jones)}$
 \end{large}
