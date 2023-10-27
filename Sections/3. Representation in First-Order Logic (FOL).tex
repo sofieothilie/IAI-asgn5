@@ -21,16 +21,16 @@
         Conclusion: Samson is a pitcher.}\
     \begin{itemize}
         \item $\mathbf{\forall x : [flies(x, Robinson) \rightarrow Pitcher(x)]}$
-        \item $\mathbf{scores(Crabb) \rightarrow (flies(Samson, Robinson) \lor Centerfielder(Robinson))}$
+        \item $\mathbf{scores(Crabb) \rightarrow (flies(Samson, Robinson) \land Centerfielder(Robinson))}$
         \item $\mathbf{scores(Crabb)}$
     \end{itemize}
 
     Translated into FOL we get:
 
-    $\forall x : [(flies(x, Robinson) \rightarrow Pitcher(x)) \\
-        \land (scores(Crabb) \rightarrow (flies(Samson, Robinson) \lor Centerfielder(Robinson)))] \\
+    $\textcolor{PineGreen}{\forall x : (flies(x, Robinson) \rightarrow Pitcher(x))} \\
+    \textcolor{PineGreen}{\land (scores(Crabb) \rightarrow (flies(Samson, Robinson) \land Centerfielder(Robinson)))} \\
         \land scores(Crabb) \\
-        \rightarrow Pitcher(Samson)$
+        \textcolor{Plum}{\rightarrow Pitcher(Samson)}$
 \end{large}
 
 
@@ -40,18 +40,18 @@
         centerfielder who flies out to Jones does not score. Robinson flies out to Jones.
         Conclusion: Jones is not a friend of Robinson.}
     \begin{itemize}
-        \item $\mathbf{\forall x : [(Centerfielder(x) \lor \neg scores(x)) \rightarrow \neg \exists y : [friend(y, x)]]}$
-        \item $\mathbf{Centerfielder(Robinson) \lor Centerfielder(Jones)}$
-        \item $\mathbf{\forall x : [(Centerfielder(x) \lor flies(x, Jones)) \rightarrow \neg scores(x)]}$
+        \item $\mathbf{\forall x : [(Centerfielder(x) \land \neg scores(x)) \rightarrow \neg \exists y : [friend(y, x)]]}$
+        \item $\mathbf{Centerfielder(Robinson) \land Centerfielder(Jones)}$
+        \item $\mathbf{\forall x : [(Centerfielder(x) \land flies(x, Jones)) \rightarrow \neg scores(x)]}$
         \item $\mathbf{flies(Robinson, Jones)}$
     \end{itemize}
     \textbf{Square brackets [] are used to stress which parts of the statement belong under which quantifier.}
 
     Translated into FOL we get:
 
-    $\textcolor{PineGreen}{\forall x : ((Centerfielder(x) \lor \neg scores(x)) \rightarrow \neg \exists y : [friend(y, x)])} \\
-        \textcolor{PineGreen}{\land (Centerfielder(Robinson) \lor Centerfielder(Jones))} \\
-        \textcolor{PineGreen}{\land [\forall x : [(Centerfielder(x) \lor flies(x, Jones)) \rightarrow \neg scores(x)]]}\\
+    $\textcolor{PineGreen}{\forall x : ((Centerfielder(x) \land \neg scores(x)) \rightarrow \neg \exists y : [friend(y, x)])} \\
+        \textcolor{PineGreen}{\land (Centerfielder(Robinson) \land Centerfielder(Jones))} \\
+        \textcolor{PineGreen}{\land [\forall x : [(Centerfielder(x) \land flies(x, Jones)) \rightarrow \neg scores(x)]]}\\
         \land flies(Robinson, Jones) \\
-        \textcolor{purple}{\rightarrow \neg friend(Robinson, Jones)}$
+        \textcolor{Plum}{\rightarrow \neg friend(Robinson, Jones)}$
 \end{large}

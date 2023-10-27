@@ -1,5 +1,46 @@
 \section{Resolution in FOL}
 \begin{large}
+    \textbf{Using resolution, prove the conclusions from Arguments A and B from exercise 3.}
+    \subsection{Argument A}
+    \begin{enumerate}
+        \item $\mathbf{\forall x : [flies(x, Robinson) \rightarrow Pitcher(x)]}$
+        \item $\mathbf{scores(Crabb) \rightarrow (flies(Samson, Robinson) \land Centerfielder(Robinson))}$
+        \item $\mathbf{scores(Crabb)}$
+    \end{enumerate}
+    Proof by contradiction\@: $\neg Pitcher(Samson)$.
 
-    
+    Insert (2) into (3):
+
+    (4) $ scores(Crabb) \rightarrow (flies(Samson, Robinson) \land Centerfielder(Robinson)) $
+
+    Replace x with Samson in (1):
+
+    (5) $flies(Samson, Robinson) \rightarrow Pitcher(Samson)$
+
+    As we assume $\neg Pitcher(Samson)$, (5) must be false.
+
+    Therefore $flies(Samson, Robinson)$ must be false.
+    Consequently, the right hand side of (4) must also be false.
+
+    Thus, we have proven by contradiction\@: $ Pitcher(Samson)$.
+
+    \subsection{Argument B}
+
+    \begin{enumerate}
+        \item $\mathbf{\forall x : [(Centerfielder(x) \land \neg scores(x)) \rightarrow \neg \exists y : [friend(y, x)]]}$
+        \item $\mathbf{Centerfielder(Robinson) \land Centerfielder(Jones)}$
+        \item $\mathbf{\forall x : [(Centerfielder(x) \land flies(x, Jones)) \rightarrow \neg scores(x)]}$
+        \item $\mathbf{flies(Robinson, Jones)}$
+    \end{enumerate}
+    Proof by contradiction\@: $friend(Jones, Robinson)$.
+
+    By combining (3) and (4), thus replacing x with Robinson, we get:
+    $(Centerfielder(Robinson) \land flies(Robinson, Jones)) \rightarrow \neg scores(Robinson)$
+
+    Thus we get that Robinson is centerfield and doesn't score. By inserting this into (1), we get:
+
+    (5) $(Centerfielder(Robinson) \land \neg scores(Robinson)) \rightarrow \neg \exists y : [friend(y, Robinson)]$
+
+    As y can be any person, we can insert Jones into (5), which gives $\neg friend(Jones, Robinson)$.
+    This is a contradiction to what we desired to prove, thus $friend(Jones, Robinson)$ must be false.
 \end{large}
