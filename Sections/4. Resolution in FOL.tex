@@ -34,13 +34,12 @@
     \end{enumerate}
     Proof by contradiction\@: $friend(Jones, Robinson)$.
 
-    By combining (3) and (4), thus replacing x with Robinson, we get:
-    $(Centerfielder(Robinson) \land flies(Robinson, Jones)) \rightarrow \neg scores(Robinson)$
+    By combining (3) and (4), thus replacing x with Robinson, we get: \\ $(Centerfielder(Robinson) \land flies(Robinson, Jones))  \\ \rightarrow \neg scores(Robinson)$
 
     Thus we get that Robinson is centerfield and doesn't score. By inserting this into (1), we get:
 
-    (5) $(Centerfielder(Robinson) \land \neg scores(Robinson)) \rightarrow \neg \exists y : [friend(y, Robinson)]$
+    (5) $(Centerfielder(Robinson) \land \neg scores(Robinson)) \\ \rightarrow \neg \exists y : [friend(y, Robinson)]$
 
-    As y can be any person, we can insert Jones into (5), which gives $\neg friend(Jones, Robinson)$.
+    As y can be any person, we can insert Jones into (5), which gives \\ $\neg friend(Jones, Robinson)$.
     This is a contradiction to what we desired to prove, thus $friend(Jones, Robinson)$ must be false.
 \end{large}

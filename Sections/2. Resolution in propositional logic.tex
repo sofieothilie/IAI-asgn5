@@ -2,7 +2,7 @@
 \subsection{Conjunctive Normal Form}
 \begin{large}
     \textbf{Convert each of the following sentences to their Conjunctive Normal Form (CNF).
-    A CNF formula is composed of a conjunction (AND) of one or more clauses, where each clause is a disjunction (OR) of literals.}
+        A CNF formula is composed of a conjunction (AND) of one or more clauses, where each clause is a disjunction (OR) of literals.}
     \begin{enumerate}
         \item $ \mathbf{p \iff q} $
 
@@ -36,13 +36,13 @@
     \begin{enumerate}
         \item $ \mathbf{(p \Rightarrow q) \Rightarrow q }$
         \item $ \mathbf{p \Rightarrow r }$
-        \item $ \mathbf{(r \Rightarrow s) \Rightarrow (\neq (s \Rightarrow q))} $
+        \item $ \mathbf{(r \Rightarrow s) \Rightarrow (\neg (s \Rightarrow q))} $
     \end{enumerate}
     Convert each statement into CNF\@:
     \begin{enumerate}
         \item $ ((p \Rightarrow q) \Rightarrow q) \equiv ((p \land \neg q) \lor q) $
         \item $ (p \Rightarrow r) \equiv (\neg p \lor r) $
-        \item $ ((r \Rightarrow s) \Rightarrow (\neq (s \Rightarrow q))) \equiv ((s \land \neg q))$
+        \item $ ((r \Rightarrow s) \Rightarrow (\neg (s \Rightarrow q))) \equiv ((s \land \neg q))$
     \end{enumerate}
     By performing resolution on clause 1 and 2 on q, we get:
     $ (p \land \neg q) \lor (\neg p \lor r)  $, which is equivalent to $ p \lor r $, which we will call clause 4 from here on.

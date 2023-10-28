@@ -13,17 +13,17 @@
   \begin{enumerate}[label=(\alph*)]
     \item \textbf{Generate the vocabulary of the following argument.}
           \begin{itemize}
-            \item (P1) Peter's argument is valid.
-            \item (P2) The premises of Peter's argument entail the conclusion.
-            \item (P3) Peter's argument is sound.
-            \item (C) The conculsion is true
+            \item (P1) Peter’s argument is valid, then Peter’s argument is sound.
+            \item (P2) Peter’s argument is valid, then Peter’s argument entail the conclusion of Peter’s argument.
+            \item (P3) Peter’s argument entail the conclusion of Peter’s argument.
+            \item (C) Peter’s argument is sound.
           \end{itemize}
     \item \textbf{Translate the argument into propositional logic statements.}
           \begin{itemize}
-            \item (P1) P
-            \item (P2) $ P \Rightarrow C $
-            \item (P3) C
-            \item (C) C
+            \item (P1) $ A_{Valid} \Rightarrow A_{Sound}$
+            \item (P2) $ A_{Valid} \Rightarrow  (A \Rightarrow C) $
+            \item (P3) $ A \Rightarrow C $
+            \item (C) $ A_{Sound} $
           \end{itemize}
     \item \textbf{Add a premise (P4) to make the conclusion of the argument valid.}
           Adding (P4) Peter's argument is valid, ensures that Peter's argument is both sound and valid, and thus the conclusion is valid.
@@ -36,8 +36,8 @@
   \textbf{For each of the following statements, determine if they are satisfiable by building the complete model (truth table) and mark tautologies.}
   A sentence is satisfiable if it is true in or satisfied by some model.
 
-  \begin{enumerate}[label= (\alph*)]
-    \item $ \mathbf{(p \Rightarrow q) \Rightarrow (p \Rightarrow r) \Rightarrow ( q \Rightarrow r )}$
+  \begin{enumerate}
+    \item $ \mathbf{(p \Rightarrow q) \Rightarrow ((p \Rightarrow r) \Rightarrow ( q \Rightarrow r ))}$
 
           \begin{tabular}{c|c|c|c|c|c|c||c}
             p & q & r & $ p \Rightarrow q $ & $ p \Rightarrow r $ & $ q \Rightarrow r $ & $ (p \Rightarrow r) \Rightarrow ( q \Rightarrow r ) $ & Total \\
@@ -54,7 +54,7 @@
             \hline
             1 & 0 & 1 & 0                   & 1                   & 1                   & 1                                                     & 1     \\
             \hline
-            1 & 1 & 0 & 1                   & 0                   & 0                   & 1                                                     & 0     \\
+            1 & 1 & 0 & 1                   & 0                   & 0                   & 1                                                     & 1     \\
             \hline
             1 & 1 & 1 & 1                   & 1                   & 1                   & 1                                                     & 1     \\
             \hline
@@ -94,19 +94,19 @@
             \hline\hline
             0 & 0 & 0 & 1                        & 0                                       & 1                     & 1                     & 1     \\
             \hline
-            0 & 0 & 1 & 0                        & 1                                       & 1                     & 1                     & 1     \\
+            0 & 0 & 1 & 1                        & 0                                       & 1                     & 1                     & 1     \\
             \hline
             0 & 1 & 0 & 1                        & 0                                       & 1                     & 1                     & 1     \\
             \hline
-            0 & 1 & 1 & 1                        & 0                                       & 1                     & 1                     & 1     \\
+            0 & 1 & 1 & 0                        & 1                                       & 1                     & 1                     & 1     \\
             \hline
             1 & 0 & 0 & 1                        & 0                                       & 0                     & 0                     & 1     \\
             \hline
             1 & 0 & 1 & 1                        & 0                                       & 0                     & 1                     & 1     \\
             \hline
-            1 & 1 & 0 & 0                        & 0                                       & 1                     & 0                     & 1     \\
+            1 & 1 & 0 & 1                        & 0                                       & 1                     & 0                     & 1     \\
             \hline
-            1 & 1 & 1 & 1                        & 0                                       & 1                     & 1                     & 1     \\
+            1 & 1 & 1 & 0                        & 0                                       & 1                     & 1                     & 1     \\
             \hline
           \end{tabular}
           \\ \\
